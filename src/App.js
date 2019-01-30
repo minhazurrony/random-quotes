@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Quotes from './components/Quotes';
-import Button from './components/Button';
+import SocialButton from './components/SocialButton';
+import './App.css';
 
 const API =
   'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
@@ -20,10 +21,21 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <Quotes quote={this.state.quote} author={this.state.author} />
-        <Button />
-      </div>
+      <React.Fragment>
+        <div className='container main-section'>
+          <div className='row'>
+            <div className='card'>
+              <SocialButton />
+
+              <Quotes quote={this.state.quote} author={this.state.author} />
+            </div>
+
+            <button type='button' className='btn btn-info'>
+              New Quote
+            </button>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

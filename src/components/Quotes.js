@@ -2,10 +2,10 @@ import React from 'react';
 
 const Quotes = ({ quote, author }) => {
   return (
-    <div>
-      <blockquote>
+    <div className='card-body'>
+      <blockquote className='blockquote mb-0'>
         <p>{quote}</p>
-        <footer>- {author}</footer>
+        <footer className='blockquote-footer'>{author}</footer>
       </blockquote>
     </div>
   );
