@@ -19,6 +19,14 @@ class App extends Component {
         this.setState({ quote: data.quoteText, author: data.quoteAuthor })
       );
   }
+
+  handleNewQuote = () => {
+    fetch(API)
+      .then(res => res.json())
+      .then(data =>
+        this.setState({ quote: data.quoteText, author: data.quoteAuthor })
+      );
+  };
   render() {
     return (
       <React.Fragment>
@@ -30,7 +38,11 @@ class App extends Component {
               <Quotes quote={this.state.quote} author={this.state.author} />
             </div>
 
-            <button type='button' className='btn btn-info'>
+            <button
+              onClick={this.handleNewQuote}
+              type='button'
+              className='btn btn-info'
+            >
               New Quote
             </button>
           </div>
