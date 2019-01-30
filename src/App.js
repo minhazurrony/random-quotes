@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Quotes from './components/Quotes';
+import Button from './components/Button';
 
 const API =
   'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <div>
         <Quotes quote={this.state.quote} author={this.state.author} />
+        <Button />
       </div>
     );
   }
